@@ -50,10 +50,11 @@ mm.add({
     });
     console.warn = function () {};
   });
+
+  //-------------------------------------------------------------------------------------------------------------------------------
   window.addEventListener('load', function () {
     (0,_main_every_page__WEBPACK_IMPORTED_MODULE_0__.everyPage)();
 
-    //-------------------------------------------------------------------------------------------------------------------------------
     //SMOOTH SCROLL
     if (!isSm) {
       gsap_ScrollSmoother__WEBPACK_IMPORTED_MODULE_3__.ScrollSmoother.create({
@@ -81,6 +82,69 @@ mm.add({
 
 /***/ }),
 
+/***/ "./src/js/main/back_to_top.js":
+/*!************************************!*\
+  !*** ./src/js/main/back_to_top.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "backToTop": () => (/* binding */ backToTop)
+/* harmony export */ });
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollToPlugin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollToPlugin */ "./node_modules/gsap/ScrollToPlugin.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollToPlugin__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin, gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+function backToTop() {
+  var toTopBut = document.getElementById('to-top');
+  var head = toTopBut.querySelector('.head');
+  // const toTopTime =
+  //   document.querySelector('body').offsetHeight / window.innerHeight / 2;
+  //console.log(toTopBut);
+  toTopBut.addEventListener('click', function () {
+    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(window, {
+      scrollTo: 'body',
+      duration: 1,
+      ease: 'power2.out'
+    });
+  });
+  var toTopEnterance = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(toTopBut, {
+    autoAlpha: 1,
+    duration: 1,
+    ease: 'power1.inOut',
+    lazy: false
+  });
+  var toTopHover = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+    defaults: {
+      ease: 'none'
+    }
+  }).to(head, {
+    y: -20,
+    duration: 0.2
+  }).set(head, {
+    y: 100
+  }).to(head, {
+    y: 0
+  }).pause(0);
+  toTopBut.addEventListener('mouseenter', function () {
+    toTopHover.play();
+  });
+  toTopBut.addEventListener('mouseleave', function () {
+    toTopHover.pause(0);
+  });
+  gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+    start: '+=200px',
+    animation: toTopEnterance,
+    toggleActions: 'play none none reverse'
+  });
+}
+
+/***/ }),
+
 /***/ "./src/js/main/every_page.js":
 /*!***********************************!*\
   !*** ./src/js/main/every_page.js ***!
@@ -91,7 +155,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "everyPage": () => (/* binding */ everyPage)
 /* harmony export */ });
-function everyPage() {}
+/* harmony import */ var _back_to_top__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./back_to_top */ "./src/js/main/back_to_top.js");
+
+function everyPage() {
+  (0,_back_to_top__WEBPACK_IMPORTED_MODULE_0__.backToTop)();
+}
 
 /***/ }),
 

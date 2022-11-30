@@ -1,0 +1,15 @@
+@import url('https://fonts.cdnfonts.com/css/arsenal-2');
+@import url('https://fonts.cdnfonts.com/css/poiret-one');
+@import url('https://fonts.cdnfonts.com/css/playfair-display');
+
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+}

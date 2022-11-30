@@ -3,10 +3,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Arsenal', 'sans'],
-      poiret: ['Poiret One', 'sans'],
-      playfair: ['Playfair display', 'sans'],
     },
-
     extend: {},
   },
   plugins: [],

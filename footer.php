@@ -1,34 +1,6 @@
 <footer class="w-full flex flex-col between">
 
 
-    <div class="w-full ">
-        <?php
-        $custom_logo_id = get_theme_mod('custom_logo');
-        $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
-
-        if (has_custom_logo()) : ?>
-
-        <a href="<?= get_site_url() ?>">
-            <img src="<?= esc_url($logo[0]) ?>" class="mr-10 w-auto h-[60px] sm:h-[90px] "
-                alt="<?= get_bloginfo('name') ?>">
-        </a>
-
-        <?php else : ?>
-
-        <a href="<?php get_site_url() ?>">
-            <h1><?= get_bloginfo('name') ?></h1>
-        </a>
-
-        <?php endif ?>
-    </div>
-
-    </section>
-
-
-    <section class="w-full ">
-    </section>
-
-
 </footer>
 
 <?php wp_footer(); ?>

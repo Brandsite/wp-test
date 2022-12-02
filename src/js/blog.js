@@ -30,7 +30,7 @@ mm.add(
      */
 
     window.addEventListener('DOMContentLoaded', () => {
-      gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
+      gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
       gsap.config({ nullTargetWarn: false });
       console.warn = () => {};

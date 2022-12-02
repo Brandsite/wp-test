@@ -2,71 +2,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/front.js":
-/*!*************************!*\
-  !*** ./src/js/front.js ***!
-  \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
-/* harmony import */ var gsap_ScrollSmoother__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! gsap/ScrollSmoother */ "./node_modules/gsap/ScrollSmoother.js");
-/* harmony import */ var gsap_ScrollToPlugin__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! gsap/ScrollToPlugin */ "./node_modules/gsap/ScrollToPlugin.js");
-/* harmony import */ var _main_every_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main/every_page */ "./src/js/main/every_page.js");
-
-
-
-
-
-gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger, gsap_ScrollSmoother__WEBPACK_IMPORTED_MODULE_3__.ScrollSmoother);
-
-//-------------------------------------------------------------------------------------------------------------------------------
-//Media query
-var mm = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.matchMedia(),
-  breakPoint = 1100,
-  sm = 700;
-mm.add({
-  // set up any number of arbitrarily-named conditions. The function below will be called when ANY of them match.
-  isDesktop: "(min-width: ".concat(breakPoint, "px)"),
-  isMobile: "(max-width: ".concat(breakPoint - 1, "px)"),
-  isSm: "(max-width: ".concat(sm - 1, "px)")
-}, function (context) {
-  // context.conditions has a boolean property for each condition defined above indicating if it's matched or not.
-  var _context$conditions = context.conditions,
-    isDesktop = _context$conditions.isDesktop,
-    isMobile = _context$conditions.isMobile,
-    isSm = _context$conditions.isSm;
-
-  /**
-   * -------------------------------------------------------------------------------------------------------------------------------
-   * Initialize stuff
-   */
-
-  window.addEventListener('DOMContentLoaded', function () {
-    gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger, gsap_ScrollSmoother__WEBPACK_IMPORTED_MODULE_3__.ScrollSmoother, gsap_ScrollToPlugin__WEBPACK_IMPORTED_MODULE_4__.ScrollToPlugin);
-    gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.config({
-      nullTargetWarn: false
-    });
-    console.warn = function () {};
-  });
-
-  //-------------------------------------------------------------------------------------------------------------------------------
-  window.addEventListener('load', function () {
-    (0,_main_every_page__WEBPACK_IMPORTED_MODULE_0__.everyPage)();
-  });
-
-  //---------------------------------------------------------------------------------
-  window.addEventListener('resize', function () {
-    gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.refresh();
-  });
-  return function () {
-    // optionally return a cleanup function that will be called when none of the conditions match anymore (after having matched)
-  };
-});
-
-/***/ }),
-
 /***/ "./src/js/main/back_to_top.js":
 /*!************************************!*\
   !*** ./src/js/main/back_to_top.js ***!
@@ -10605,30 +10540,6 @@ var gsapWithCSS = _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin
 TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
 
-/***/ }),
-
-/***/ "./src/scss/app.scss":
-/*!***************************!*\
-  !*** ./src/scss/app.scss ***!
-  \***************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./src/css/app.css":
-/*!*************************!*\
-  !*** ./src/css/app.css ***!
-  \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
 /***/ })
 
 /******/ 	});
@@ -10657,42 +10568,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = __webpack_modules__;
-/******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/chunk loaded */
-/******/ 	(() => {
-/******/ 		var deferred = [];
-/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
-/******/ 			if(chunkIds) {
-/******/ 				priority = priority || 0;
-/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
-/******/ 				deferred[i] = [chunkIds, fn, priority];
-/******/ 				return;
-/******/ 			}
-/******/ 			var notFulfilled = Infinity;
-/******/ 			for (var i = 0; i < deferred.length; i++) {
-/******/ 				var [chunkIds, fn, priority] = deferred[i];
-/******/ 				var fulfilled = true;
-/******/ 				for (var j = 0; j < chunkIds.length; j++) {
-/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
-/******/ 						chunkIds.splice(j--, 1);
-/******/ 					} else {
-/******/ 						fulfilled = false;
-/******/ 						if(priority < notFulfilled) notFulfilled = priority;
-/******/ 					}
-/******/ 				}
-/******/ 				if(fulfilled) {
-/******/ 					deferred.splice(i--, 1)
-/******/ 					var r = fn();
-/******/ 					if (r !== undefined) result = r;
-/******/ 				}
-/******/ 			}
-/******/ 			return result;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -10721,69 +10597,70 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		};
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/jsonp chunk loading */
-/******/ 	(() => {
-/******/ 		// no baseURI
-/******/ 		
-/******/ 		// object to store loaded and loading chunks
-/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
-/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
-/******/ 		var installedChunks = {
-/******/ 			"/assets/dist/js/front": 0,
-/******/ 			"assets/dist/css/app": 0
-/******/ 		};
-/******/ 		
-/******/ 		// no chunk on demand loading
-/******/ 		
-/******/ 		// no prefetching
-/******/ 		
-/******/ 		// no preloaded
-/******/ 		
-/******/ 		// no HMR
-/******/ 		
-/******/ 		// no HMR manifest
-/******/ 		
-/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
-/******/ 		
-/******/ 		// install a JSONP callback for chunk loading
-/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
-/******/ 			var [chunkIds, moreModules, runtime] = data;
-/******/ 			// add "moreModules" to the modules object,
-/******/ 			// then flag all "chunkIds" as loaded and fire callback
-/******/ 			var moduleId, chunkId, i = 0;
-/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
-/******/ 				for(moduleId in moreModules) {
-/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
-/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
-/******/ 					}
-/******/ 				}
-/******/ 				if(runtime) var result = runtime(__webpack_require__);
-/******/ 			}
-/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
-/******/ 			for(;i < chunkIds.length; i++) {
-/******/ 				chunkId = chunkIds[i];
-/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
-/******/ 					installedChunks[chunkId][0]();
-/******/ 				}
-/******/ 				installedChunks[chunkId] = 0;
-/******/ 			}
-/******/ 			return __webpack_require__.O(result);
-/******/ 		}
-/******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkbrandsite_starter_theme"] = self["webpackChunkbrandsite_starter_theme"] || [];
-/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
-/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
-/******/ 	})();
-/******/ 	
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["assets/dist/css/app"], () => (__webpack_require__("./src/js/front.js")))
-/******/ 	__webpack_require__.O(undefined, ["assets/dist/css/app"], () => (__webpack_require__("./src/scss/app.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["assets/dist/css/app"], () => (__webpack_require__("./src/css/app.css")))
-/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
-/******/ 	
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/*!************************!*\
+  !*** ./src/js/blog.js ***!
+  \************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+/* harmony import */ var gsap_ScrollSmoother__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! gsap/ScrollSmoother */ "./node_modules/gsap/ScrollSmoother.js");
+/* harmony import */ var gsap_ScrollToPlugin__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! gsap/ScrollToPlugin */ "./node_modules/gsap/ScrollToPlugin.js");
+/* harmony import */ var _main_every_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main/every_page */ "./src/js/main/every_page.js");
+
+
+
+
+
+gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger, gsap_ScrollSmoother__WEBPACK_IMPORTED_MODULE_3__.ScrollSmoother);
+
+//-------------------------------------------------------------------------------------------------------------------------------
+//Media query
+var mm = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.matchMedia(),
+  breakPoint = 1100,
+  sm = 700;
+mm.add({
+  // set up any number of arbitrarily-named conditions. The function below will be called when ANY of them match.
+  isDesktop: "(min-width: ".concat(breakPoint, "px)"),
+  isMobile: "(max-width: ".concat(breakPoint - 1, "px)"),
+  isSm: "(max-width: ".concat(sm - 1, "px)")
+}, function (context) {
+  // context.conditions has a boolean property for each condition defined above indicating if it's matched or not.
+  var _context$conditions = context.conditions,
+    isDesktop = _context$conditions.isDesktop,
+    isMobile = _context$conditions.isMobile,
+    isSm = _context$conditions.isSm;
+
+  /**
+   * -------------------------------------------------------------------------------------------------------------------------------
+   * Initialize stuff
+   */
+
+  window.addEventListener('DOMContentLoaded', function () {
+    gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger, gsap_ScrollToPlugin__WEBPACK_IMPORTED_MODULE_4__.ScrollToPlugin);
+    gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.config({
+      nullTargetWarn: false
+    });
+    console.warn = function () {};
+  });
+
+  //-------------------------------------------------------------------------------------------------------------------------------
+  window.addEventListener('load', function () {
+    (0,_main_every_page__WEBPACK_IMPORTED_MODULE_0__.everyPage)();
+  });
+
+  //---------------------------------------------------------------------------------
+  window.addEventListener('resize', function () {
+    gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.refresh();
+  });
+  return function () {
+    // optionally return a cleanup function that will be called when none of the conditions match anymore (after having matched)
+  };
+});
+})();
+
 /******/ })()
 ;

@@ -69,7 +69,7 @@ if (!class_exists('BrContactForm')) {
 
 
             //subject
-            $subject = 'Sent from Hell';
+            $subject = '';
 
             //message
             $message = '';

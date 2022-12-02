@@ -21,7 +21,7 @@ define('BR_THEME_TEXT_DOMAIN', wp_get_theme()->get('TextDomain'));
 
 /**
  * -----------------------------------------------------------------------------------------------------------
- * Theme setup
+ * Helpers
  */
 require_once get_template_directory() . '/includes/helpers.php';
 
@@ -33,9 +33,21 @@ require_once get_template_directory() . '/includes/theme_setup/br_theme_setup.ph
 
 /**
  * -----------------------------------------------------------------------------------------------------------
+ * Create content for tests
+ */
+require_once get_template_directory() . '/includes/theme_setup/br_test_content.php';
+
+/**
+ * -----------------------------------------------------------------------------------------------------------
  * Removal of the unwanted default stuff 
  */
 require_once get_template_directory() . '/includes/theme_setup/br_optimize.php';
+
+/**
+ * ----------------------------------------------------------------------------------------------------------- 
+ * Blog
+ */
+require_once get_template_directory() . '/includes/blog/br_blog.php';
 
 /** 
  * -----------------------------------------------------------------------------------------------------------

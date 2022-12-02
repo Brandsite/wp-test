@@ -1,7 +1,7 @@
-<ul class="category-menu flex gap-2.5">
+<ul class="category-menu">
     <li>
         <a href="<?= get_site_url() . '/blogs' ?>"
-            class="uppercase font-bold <?php if (is_page('blogs')) echo 'underline' ?>"><?= __('Viss', BR_THEME_TEXT_DOMAIN) ?></a>
+            class="<?php if (is_page('blogs')) echo 'underline' ?>"><?= __('Viss', BR_THEME_TEXT_DOMAIN) ?></a>
     </li>
 
     <?php
@@ -15,7 +15,7 @@
     foreach ($categories as $category) : ?>
     <li>
         <a href="<?= esc_url(get_category_link($category->term_id)) ?>"
-            class="uppercase font-bold <?php if ($current_category->name === $category->name) echo 'underline' ?>"><?= $category->name ?>
+            class="<?php if ($current_category->name === $category->name) echo 'underline' ?>"><?= $category->name ?>
         </a>
     </li>
     <?php endforeach ?>

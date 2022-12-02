@@ -33,7 +33,7 @@ if (!class_exists('BrBlog')) {
                 while ($query->have_posts()) : $query->the_post();
 
                     $args1 = array(
-                        'title'    => $query->post->post_name,
+                        'title'    => $query->post->post_title,
                         'date'     => $query->post->post_date,
                         'excerpt'  => wp_trim_words($query->post->post_content, 30),
                         'link'     => get_permalink(),

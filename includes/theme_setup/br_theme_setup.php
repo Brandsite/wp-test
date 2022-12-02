@@ -118,6 +118,7 @@ if (!class_exists('BrThemeSetup')) {
             add_theme_support('custom-logo', $this->settings['logo']);
 
             add_theme_support('title-tag');
+            add_theme_support('post-thumbnails');
 
             // add_theme_support('woocommerce');
             // remove_theme_support('wc-product-gallery-lightbox');

@@ -7,6 +7,7 @@ mix
     require('autoprefixer'),
   ])
   .js('src/js/front', 'assets/dist/js')
+  .js('src/js/blog', 'assets/dist/js')
   .options({
     processCssUrls: false,
   })

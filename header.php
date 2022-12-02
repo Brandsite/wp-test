@@ -16,7 +16,7 @@
     <!-- <div id="smooth-wrapper"> -->
     <!-- <div id="smooth-content"> -->
     <header class="flex">
-        <div class="pl-5 w-fit flex items-center pt-2.5">
+        <div class="p-1 w-fit flex items-center ">
             <?php
 
             $custom_logo_id = get_theme_mod('custom_logo');
@@ -42,15 +42,9 @@
             <?php
             wp_nav_menu(array(
                 'menu'         => 'Header menu',
-                'menu_class'   => 'uppercase hidden header:flex',
-                'add_li_class' => 'p-1 m-2.5',
+                'menu_class'   => 'uppercase flex',
+                'add_li_class' => 'p-1 mx-2.5'
             )) ?>
-
-            <svg id="nav-burger" class="flex header:hidden w-[45px] z-[999] cursor-pointer" x="0px" y="0px"
-                viewBox="-280 396 50 12.1" xml:space="preserve" class="w-[45px] cursor-pointer h-img">
-                <line style="fill: none; stroke: #000" class="st0" x1="-230.3" y1="396.5" x2="-279.7" y2="396.5" />
-                <line style="fill: none; stroke: #000" class="st0" x1="-230.3" y1="407.5" x2="-279.7" y2="407.5" />
-            </svg>
 
             <?php get_template_part('template-parts/global/mobile_menu') ?>
         </div>

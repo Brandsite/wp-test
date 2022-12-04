@@ -1,0 +1,31 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!-----------Aktivizējot tēmu 1. reizi-----------!!!!!!
+!!!!!!---viss ieprēkšajais saturs - lapas un posti---!!!!!!
+!!!!!!------------------TIKS DZĒSTS------------------!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Nepieciešamie instrumenti uzdevuma izpildei:
+
+1. Node.js
+2. XAMPP vai līdzīgs local development tools pēc izvēles, ar ko var izveidot lokālu WordPress instalāciju
+3. github.com konts
+4. Git
+
+---
+
+1.Izveidot lokālu WordPress instalāciju.
+
+2.Atvērt tēmu mapi command line un klonēt šo repository https://github.com/Brandsite/wp-test.git . Noklonētais repository būs tēma, kurā būs jāveic uzdevums.
+
+3.Atvērt WP-test mapi ar koda editoru (piemēram VS Code) un instalēt visus nepieciešamos dependencies . Konfigurācijas fails jau ir izveidots, tikai jāuzinstalē izmantojot komandu - npm i. Komandas koda compile var atrast package.json failā pie "scripts". Ja nepieciešami skaidrojumi - https://laravel-mix.com/docs/6.0/cli .
+
+4.Tēma pie aktivizēšanas būs izveidojusi lapu "blogs" un 4 postus. Lapas nosakums un postu režģis jāizveido kā šajā Figma failā https://www.figma.com/file/CwYzCFrXlHsdeyb28bjNne/WP-test?node-id=0%3A1&t=bnp4j2Ft6y2cPLTG-1 .
+Uzdevums veicams izmantojot TailwindCSS, kurš jau ir uzinstalēts, ir tikai jāuztaisa dizains pēc Figmas. Bloga postu režģim jābūt visa ekrāna platumā un responsive. Mobīlo skatu nav nepieciešams taisīt.
+
+5.Kad Nr.4 ir paveikts, izveidot jaunu branch nosauktu savā vārdā, pushot izmaiņas un uztaisīt pull request
+
+git checkout -b Tavsvārds
+git add .
+git commit -m tavaziņa
+git push -u origin Tavsvārds  
+git request-pull

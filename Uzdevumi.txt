@@ -28,4 +28,5 @@ git checkout -b Tavsvārds
 git add .
 git commit -m tavaziņa
 git push -u origin Tavsvārds  
-git request-pull
+
+uztaisīt pull request
